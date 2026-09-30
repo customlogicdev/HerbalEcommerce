@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — Earthy Greens + Cream */
+  --color-primary: #3a5a40;
+  --color-primary-light: #a3b18a;
+  --color-primary-dark: #2c422f;
+  --color-cream: #fefae0;
+  --color-beige: #e9edc9;
+  --color-peach: #f4a261;
+  --color-gold: #e9c46a;
+  --color-charcoal: #1a1a1a;
+  --color-muted: #6b7280;
+
+  /* Typography */
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-serif);
+  }
+
+  ::selection {
+    background-color: var(--color-primary-light);
+    color: var(--color-charcoal);
+  }
+}
+
+/* Hide scrollbar for horizontal snap carousels */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
